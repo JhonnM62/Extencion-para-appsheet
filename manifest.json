@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Sincronización Automática",
+  "version": "1.0",
+  "description": "Una extensión para sincronización automática",
+  "permissions": ["activeTab", "storage", "scripting", "tabs"],
+  "icons": {
+    "128": "logo.png"
+  },
+  "action": {
+    "default_popup": "app.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.appsheet.com/*"],
+      "js": ["script.js"]
+    }
+  ]
+}

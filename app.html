@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contador de Tiempo de Sincronización</title>
+    <style>
+      .container {
+        width: 300px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        background-color: #1f2c3b;
+        color: white;
+      }
+
+      #syncTime {
+        border-radius: 5px;
+        padding: 5px;
+        width: 50px;
+        margin-top: 5px;
+      }
+
+      #inicioS {
+        margin-top: 10px;
+        background-color: yellow;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        padding: 8px 16px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      img {
+        margin-top: -10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="/logo.png" alt="Imagen" style="width: 80px" />
+      <h1>Tiempo de Sincronización</h1>
+      <label for="syncTime">Selecciona el tiempo en segundos:</label>
+      <br />
+      <input
+        type="number"
+        id="syncTime"
+        name="syncTime"
+        min="1"
+        step="1"
+        value="1"
+      />
+      <br />
+      <button id="inicioS">Comenzar Sincronización</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
