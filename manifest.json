@@ -4,16 +4,16 @@
   "version": "1.0",
   "description": "Una extensión para sincronización automática",
   "permissions": ["activeTab", "storage", "scripting", "tabs"],
+  "host_permissions": ["<all_urls>"],
   "icons": {
     "128": "logo.png"
   },
   "action": {
     "default_popup": "app.html"
   },
-
   "content_scripts": [
     {
-      "matches": ["https://www.appsheet.com/*"],
+      "matches": ["<all_urls>"],
       "js": ["script.js"]
     }
   ]
