@@ -1,9 +1,8 @@
 function injectTheScript(scriptFunction) {
-  // Wuery the active tab, which will be only one tab and inject the script function in it.
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     chrome.scripting.executeScript({
       target: { tabId: tabs[0].id },
-      func: scriptFunction,
+      function: scriptFunction,
     });
   });
 }
@@ -17,8 +16,22 @@ function clickButton() {
   }
 }
 
-document.getElementById("inicioS").addEventListener("click", () => {
-  console.log("Button clicked");
-  injectTheScript(clickButton);
-  setInterval(clickButton, 5000);
+// Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  // Attach the event listener to the button
+  document.getElementById("inicioS").addEventListener("click", () => {
+    const button = document.getElementById("inicioS"); // Obtener referencia al botón
+
+    // Cambiar el color al hacer clic
+    button.style.backgroundColor = "red"; // Cambiar el color de fondo a verde
+    const syncTimeInput = document.getElementById("syncTime");
+    const inputValue = syncTimeInput.value;
+    // Inject the script once
+    injectTheScript(clickButton);
+
+    // Call clickButton every 5 seconds
+    setInterval(() => {
+      injectTheScript(clickButton);
+    }, inputValue * 1000);
+  });
 });

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Sincronización Automática",
+  "name": "Sincronización Automática Appsheet",
   "version": "1.0",
-  "description": "Una extensión para sincronización automática",
+  "description": "Una extensión para modificar el tiempo de Sincronización de Appsheet",
   "permissions": ["activeTab", "storage", "scripting", "tabs"],
   "host_permissions": ["<all_urls>"],
   "icons": {
